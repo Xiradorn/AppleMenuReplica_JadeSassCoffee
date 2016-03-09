@@ -1,8 +1,3 @@
-$(window).load ()->
-	$('#loader')
-		.delay 400
-		.fadeOut 'fast'
-
 $(".xirfloat-menu ul li").hover () ->
 		$(@).next()
 			.addClass 'hovering'
