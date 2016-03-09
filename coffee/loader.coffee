@@ -5,7 +5,7 @@ window.onload = ()->
 
 fadeOutX = (trg, mode = 'fast') ->
     if mode == 'slow'
-        tm = 8
+        tm = 5
     else
         tm = 2
     intVal = setInterval ->
