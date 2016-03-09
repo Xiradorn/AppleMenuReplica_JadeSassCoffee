@@ -1,20 +1,20 @@
 window.onload = ()->
 	x = document.getElementById 'loader'
-	setTimeout fadeOutX(x, 'fast')
+	setTimeout fadeOutX(x, 'slow')
 	, 400
 
-fadeOutX = (trg, mode) ->
-    if mode is 'slow'
-        tm = 2
+fadeOutX = (trg, mode = 'fast') ->
+    if mode == 'slow'
+        tm = 8
     else
-        tm = 20
+        tm = 2
     intVal = setInterval ->
     		if !trg.style.opacity
     			trg.style.opacity = 1
 
-    		if trg.style.opacity < 0.01
+    		if trg.style.opacity < 0.008
     			clearInterval intVal
     			trg.parentNode.removeChild trg
     		else
-    			trg.style.opacity -= 0.01
+    			trg.style.opacity -= 0.008
 	    , tm
