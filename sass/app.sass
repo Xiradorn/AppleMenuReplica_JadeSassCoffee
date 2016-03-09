@@ -4,6 +4,11 @@
 *, *::after, *::before
 	box-sizing: border-box
 
+::selection
+	background:
+		color: $selectText
+	color: white
+
 html, body
 	font:
 		family: 'Lato'
@@ -103,7 +108,7 @@ article
 
 		li
 			display: inline-block
-			background-color: #151B35
+			background-color: $accent
 			color: #fff
 			padding: .8em 1.2em
 			vertical-align: bottom
