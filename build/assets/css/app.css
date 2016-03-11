@@ -90,8 +90,6 @@ figure {
 }
 
 hr {
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -138,8 +136,6 @@ input {
 }
 
 input[type="checkbox"], input[type="radio"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
 }
@@ -150,8 +146,6 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 
 input[type="search"] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -191,9 +185,16 @@ td, th {
   box-sizing: border-box;
 }
 
+::-moz-selection {
+  background-color: #2A3964;
+  color: white;
+  text-decoration: underline;
+}
+
 ::selection {
   background-color: #2A3964;
   color: white;
+  text-decoration: underline;
 }
 
 html, body {
@@ -220,7 +221,8 @@ html, body {
   left: 50%;
   margin-top: -20px;
   margin-left: -125px;
-  animation: blinker 1s linear infinite alternate;
+  -webkit-animation: blinker 1s linear infinite alternate;
+          animation: blinker 1s linear infinite alternate;
 }
 
 .full-box {
@@ -308,9 +310,23 @@ article p {
 .xirfloat-menu ul li:hover {
   padding: 1.7em 2em;
 }
+@media all and (max-width: 500px) {
+  .xirfloat-menu ul li {
+    font-size: 0.65em;
+  }
+}
 
 .hovering {
   padding: 1.25em 1.7em !important;
+}
+
+@-webkit-keyframes blinker {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes blinker {
@@ -321,5 +337,3 @@ article p {
     opacity: 1;
   }
 }
-
-/*# sourceMappingURL=app.css.map */

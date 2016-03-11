@@ -8,6 +8,8 @@
 	background:
 		color: $selectText
 	color: white
+	text:
+		decoration: underline
 
 html, body
 	font:
@@ -117,6 +119,10 @@ article
 			margin: 0 1px
 			&:hover
 				padding: 1.7em 2em
+
+			@media all and (max-width: 500px)
+				font:
+					size: .65em
 
 
 .hovering

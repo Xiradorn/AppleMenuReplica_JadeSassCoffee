@@ -43,6 +43,18 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        postcss: {
+            options: {
+                processors: [
+                    require('pixrem')(), // add fallbacks for rem units
+                    require('autoprefixer')({browsers: 'last 4 versions'}), // add vendor prefixes
+                    // require('cssnano')() // minify the result
+                ]
+            },
+            files: {
+                src: 'build/assets/css/*.css'
+            }
+        },
         coffee:  {
             js: {
                 options: {
@@ -65,7 +77,7 @@ module.exports = function(grunt) {
                 files: [{
                     src: [
                         'coffee/jquery.js',
-                        'build/assets/js/*.js',
+                        'build/assets/js/app.js'
                     ],
                     dest: 'build/assets/js/app.js'
                 }]
@@ -106,7 +118,7 @@ module.exports = function(grunt) {
         watch: {
             sass: {
                 files: ['**/*.sass'],
-                tasks: ['sass']
+                tasks: ['sass', 'postcss']
             },
             coffee: {
                 files: ['**/*.coffee'],
@@ -117,7 +129,7 @@ module.exports = function(grunt) {
                 tasks: ['jade']
             },
             concatUgly: {
-                files: ['build/assets/js/*.js'],
+                files: ['build/assets/js/app.js', 'build/assets/js/loader.js'],
                 tasks: ['concat', 'uglify']
             },
             htmlmin: {
@@ -134,12 +146,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-postcss');
 
     grunt.registerTask('default', [
         'coffee',
         'concat',
         'uglify',
         'sass',
+        'postcss',
         'jade',
         'htmlmin',
         'watch'
