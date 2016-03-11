@@ -14,6 +14,18 @@ module.exports = function(grunt) {
                     dest: 'build/',
                     ext: '.html'
                 }]
+            },
+            templateexpanded: {
+                options: {
+                    pretty: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: './',
+                    src: '*.jade',
+                    dest: 'build/',
+                    ext: '.exp.html'
+                }]
             }
         },
         sass: {
