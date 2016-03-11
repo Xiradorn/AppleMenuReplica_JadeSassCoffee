@@ -1,0 +1,41 @@
+{
+  "name": "applemenureplica",
+  "version": "1.0.0",
+  "description": "A replica apple osx menu bar probably",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xiradorn/AppleMenuReplica_JadeSassCoffee.git"
+  },
+  "keywords": [
+    "apple",
+    "osx",
+    "menu",
+    "bottom",
+    "page",
+    "sass",
+    "jade",
+    "coffeescript",
+    "xiradorn",
+    "resposnsive"
+  ],
+  "author": "Xiradorn <http://xiradorn.it>",
+  "license": "CC-BY-NC-SA-3.0",
+  "bugs": {
+    "url": "https://github.com/Xiradorn/AppleMenuReplica_JadeSassCoffee/issues"
+  },
+  "homepage": "https://github.com/Xiradorn/AppleMenuReplica_JadeSassCoffee#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-coffee": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-htmlmin": "^1.0.0",
+    "grunt-contrib-jade": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
